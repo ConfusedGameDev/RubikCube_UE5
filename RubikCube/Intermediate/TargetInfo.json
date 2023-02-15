@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "RubikCube",
+			"Path": "D:\\JORGEDATA\\portafolio\\ue5\\RubikCube\\RubikCube_UE5\\RubikCube\\Source\\RubikCube.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "RubikCubeEditor",
+			"Path": "D:\\JORGEDATA\\portafolio\\ue5\\RubikCube\\RubikCube_UE5\\RubikCube\\Source\\RubikCubeEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

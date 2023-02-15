@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\JORGEDATA\\portafolio\\ue5\\RubikCube\\RubikCube_UE5\\RubikCube\\Source\\RubikCube\\RubikCube.Build.cs",
+		"D:\\JORGEDATA\\portafolio\\ue5\\RubikCube\\RubikCube_UE5\\RubikCube\\Source\\RubikCube.Target.cs",
+		"D:\\JORGEDATA\\portafolio\\ue5\\RubikCube\\RubikCube_UE5\\RubikCube\\Source\\RubikCubeEditor.Target.cs"
+	],
+	"EngineVersion": "5.0.3"
+}
