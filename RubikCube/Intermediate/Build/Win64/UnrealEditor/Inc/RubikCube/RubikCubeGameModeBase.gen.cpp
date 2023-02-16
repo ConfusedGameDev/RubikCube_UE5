@@ -81,10 +81,6 @@ void EmptyLinkFunctionForGeneratedCodeRubikCubeGameModeBase() {}
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_Dimension_MetaData[];
-#endif
-		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_Dimension;
-#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_hasWon_MetaData[];
 #endif
 		static void NewProp_hasWon_SetBit(void* Obj);
@@ -110,13 +106,6 @@ void EmptyLinkFunctionForGeneratedCodeRubikCubeGameModeBase() {}
 	};
 #endif
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ARubikCubeGameModeBase_Statics::NewProp_Dimension_MetaData[] = {
-		{ "Category", "RubikCubeGameModeBase" },
-		{ "ModuleRelativePath", "RubikCubeGameModeBase.h" },
-	};
-#endif
-	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_ARubikCubeGameModeBase_Statics::NewProp_Dimension = { "Dimension", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ARubikCubeGameModeBase, Dimension), METADATA_PARAMS(Z_Construct_UClass_ARubikCubeGameModeBase_Statics::NewProp_Dimension_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ARubikCubeGameModeBase_Statics::NewProp_Dimension_MetaData)) };
-#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ARubikCubeGameModeBase_Statics::NewProp_hasWon_MetaData[] = {
 		{ "Category", "RubikCubeGameModeBase" },
 		{ "ModuleRelativePath", "RubikCubeGameModeBase.h" },
@@ -128,7 +117,6 @@ void EmptyLinkFunctionForGeneratedCodeRubikCubeGameModeBase() {}
 	}
 	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ARubikCubeGameModeBase_Statics::NewProp_hasWon = { "hasWon", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(ARubikCubeGameModeBase), &Z_Construct_UClass_ARubikCubeGameModeBase_Statics::NewProp_hasWon_SetBit, METADATA_PARAMS(Z_Construct_UClass_ARubikCubeGameModeBase_Statics::NewProp_hasWon_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ARubikCubeGameModeBase_Statics::NewProp_hasWon_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ARubikCubeGameModeBase_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARubikCubeGameModeBase_Statics::NewProp_Dimension,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARubikCubeGameModeBase_Statics::NewProp_hasWon,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ARubikCubeGameModeBase_Statics::StaticCppClassTypeInfo = {
@@ -167,9 +155,9 @@ void EmptyLinkFunctionForGeneratedCodeRubikCubeGameModeBase() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_RubikCube_Source_RubikCube_RubikCubeGameModeBase_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ARubikCubeGameModeBase, ARubikCubeGameModeBase::StaticClass, TEXT("ARubikCubeGameModeBase"), &Z_Registration_Info_UClass_ARubikCubeGameModeBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ARubikCubeGameModeBase), 1546792324U) },
+		{ Z_Construct_UClass_ARubikCubeGameModeBase, ARubikCubeGameModeBase::StaticClass, TEXT("ARubikCubeGameModeBase"), &Z_Registration_Info_UClass_ARubikCubeGameModeBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ARubikCubeGameModeBase), 1274344900U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_RubikCube_Source_RubikCube_RubikCubeGameModeBase_h_475888417(TEXT("/Script/RubikCube"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_RubikCube_Source_RubikCube_RubikCubeGameModeBase_h_2862677585(TEXT("/Script/RubikCube"),
 		Z_CompiledInDeferFile_FID_RubikCube_Source_RubikCube_RubikCubeGameModeBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_RubikCube_Source_RubikCube_RubikCubeGameModeBase_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

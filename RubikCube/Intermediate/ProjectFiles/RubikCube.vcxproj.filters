@@ -56,11 +56,23 @@
     <ClCompile Include="..\..\Source\RubikCube\Private\GSRubikCube.cpp">
       <Filter>Source\RubikCube\Private</Filter>
     </ClCompile>
+    <Filter Include="Source\RubikCube\Private\02_Cube">
+      <UniqueIdentifier>{D868F7D4-F69D-3256-9FF8-3D1EF678FDD0}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\RubikCube\Private\02_Cube\Cube.cpp">
+      <Filter>Source\RubikCube\Private\02_Cube</Filter>
+    </ClCompile>
     <Filter Include="Source\RubikCube\Public">
       <UniqueIdentifier>{FDD0702B-D73B-3BD9-BB17-CFE90255BF6D}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\RubikCube\Public\GSRubikCube.h">
       <Filter>Source\RubikCube\Public</Filter>
+    </ClInclude>
+    <Filter Include="Source\RubikCube\Public\02_Cube">
+      <UniqueIdentifier>{1D13A4AD-13C8-35A7-AF10-552587DDAA69}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\RubikCube\Public\02_Cube\Cube.h">
+      <Filter>Source\RubikCube\Public\02_Cube</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

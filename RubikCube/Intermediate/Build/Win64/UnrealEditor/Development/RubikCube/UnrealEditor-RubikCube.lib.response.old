@@ -7,9 +7,13 @@
 /IGNORE:4221
 /NODEFAULTLIB
 "D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\RubikCubeEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
-"D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Development\RubikCube\RubikCube.cpp.obj"
+"D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Development\RubikCube\Cublet.cpp.obj"
 "D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Development\RubikCube\GSRubikCube.cpp.obj"
+"D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Development\RubikCube\RubikCube.cpp.obj"
+"D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Development\RubikCube\Cube.cpp.obj"
 "D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Development\RubikCube\RubikCubeGameModeBase.cpp.obj"
+"D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Development\RubikCube\Cube.gen.cpp.obj"
+"D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Development\RubikCube\Cublet.gen.cpp.obj"
 "D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Development\RubikCube\GSRubikCube.gen.cpp.obj"
 "D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Development\RubikCube\RubikCube.init.gen.cpp.obj"
 "D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Development\RubikCube\RubikCubeGameModeBase.gen.cpp.obj"

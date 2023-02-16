@@ -4,6 +4,12 @@
 #include "Cublet.h"
 
 
+
+void ACublet::DestroyCublet()
+{
+	Destroy();
+}
+
 // Sets default values
 ACublet::ACublet()
 {

@@ -14,11 +14,11 @@ class RUBIKCUBE_API ARubikCubeGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 public:
-	UPROPERTY(EditAnywhere,BlueprintReadWrite)
-	int Dimension;
+	
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly)
 	bool hasWon;
 
+	virtual  void BeginPlay() override;
 
 	//Public  Methods	 
 	UFUNCTION(BlueprintCallable)
