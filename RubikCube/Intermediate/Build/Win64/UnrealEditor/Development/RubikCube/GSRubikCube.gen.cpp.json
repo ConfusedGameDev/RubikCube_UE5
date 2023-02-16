@@ -1,0 +1,21 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "d:\\jorgedata\\portafolio\\ue5\\rubikcube\\rubikcube_ue5\\rubikcube\\intermediate\\build\\win64\\unrealeditor\\inc\\rubikcube\\gsrubikcube.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\jorgedata\\portafolio\\ue5\\rubikcube\\rubikcube_ue5\\rubikcube\\intermediate\\build\\win64\\rubikcubeeditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "d:\\jorgedata\\portafolio\\ue5\\rubikcube\\rubikcube_ue5\\rubikcube\\intermediate\\build\\win64\\unrealeditor\\development\\rubikcube\\definitions.rubikcube.h",
+            "d:\\jorgedata\\portafolio\\ue5\\rubikcube\\rubikcube_ue5\\rubikcube\\source\\rubikcube\\public\\gsrubikcube.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamestatebase.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\serverstatreplicator.generated.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\gamemodebase.generated.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\gamestatebase.generated.h",
+            "d:\\jorgedata\\portafolio\\ue5\\rubikcube\\rubikcube_ue5\\rubikcube\\intermediate\\build\\win64\\unrealeditor\\inc\\rubikcube\\gsrubikcube.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

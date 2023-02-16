@@ -1,0 +1,13 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "d:\\jorgedata\\portafolio\\ue5\\rubikcube\\rubikcube_ue5\\rubikcube\\intermediate\\build\\win64\\unrealeditor\\inc\\rubikcube\\rubikcube.init.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\jorgedata\\portafolio\\ue5\\rubikcube\\rubikcube_ue5\\rubikcube\\intermediate\\build\\win64\\rubikcubeeditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "d:\\jorgedata\\portafolio\\ue5\\rubikcube\\rubikcube_ue5\\rubikcube\\intermediate\\build\\win64\\unrealeditor\\development\\rubikcube\\definitions.rubikcube.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

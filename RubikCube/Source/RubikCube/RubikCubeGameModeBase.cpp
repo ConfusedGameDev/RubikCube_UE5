@@ -3,3 +3,7 @@
 
 #include "RubikCubeGameModeBase.h"
 
+bool ARubikCubeGameModeBase::hasCublet()
+{
+	return  false;
+}

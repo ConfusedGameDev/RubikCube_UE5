@@ -41,5 +41,26 @@
     <ClInclude Include="..\..\Source\RubikCube\RubikCubeGameModeBase.h">
       <Filter>Source\RubikCube</Filter>
     </ClInclude>
+    <Filter Include="Source\RubikCube\02_Cube">
+      <UniqueIdentifier>{73AD4286-B76F-3BEB-B6F2-B59458D4DAEB}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\RubikCube\02_Cube\Cublet.cpp">
+      <Filter>Source\RubikCube\02_Cube</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\RubikCube\02_Cube\Cublet.h">
+      <Filter>Source\RubikCube\02_Cube</Filter>
+    </ClInclude>
+    <Filter Include="Source\RubikCube\Private">
+      <UniqueIdentifier>{6C63C6E6-693A-3DCD-8512-C7643F87E156}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\RubikCube\Private\GSRubikCube.cpp">
+      <Filter>Source\RubikCube\Private</Filter>
+    </ClCompile>
+    <Filter Include="Source\RubikCube\Public">
+      <UniqueIdentifier>{FDD0702B-D73B-3BD9-BB17-CFE90255BF6D}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\RubikCube\Public\GSRubikCube.h">
+      <Filter>Source\RubikCube\Public</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

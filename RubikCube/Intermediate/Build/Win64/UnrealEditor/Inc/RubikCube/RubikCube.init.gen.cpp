@@ -17,13 +17,13 @@ void EmptyLinkFunctionForGeneratedCodeRubikCube_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xD633967D,
-				0x73F19B42,
+				0xF7862CC9,
+				0x44F76BAF,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_RubikCube.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_RubikCube.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_RubikCube(Z_Construct_UPackage__Script_RubikCube, TEXT("/Script/RubikCube"), Z_Registration_Info_UPackage__Script_RubikCube, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xD633967D, 0x73F19B42));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_RubikCube(Z_Construct_UPackage__Script_RubikCube, TEXT("/Script/RubikCube"), Z_Registration_Info_UPackage__Script_RubikCube, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xF7862CC9, 0x44F76BAF));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

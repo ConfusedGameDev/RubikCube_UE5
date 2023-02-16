@@ -14,8 +14,16 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define RUBIKCUBE_RubikCubeGameModeBase_generated_h
 
 #define FID_RubikCube_Source_RubikCube_RubikCubeGameModeBase_h_15_SPARSE_DATA
-#define FID_RubikCube_Source_RubikCube_RubikCubeGameModeBase_h_15_RPC_WRAPPERS
-#define FID_RubikCube_Source_RubikCube_RubikCubeGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_RubikCube_Source_RubikCube_RubikCubeGameModeBase_h_15_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(exechasCublet);
+
+
+#define FID_RubikCube_Source_RubikCube_RubikCubeGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(exechasCublet);
+
+
 #define FID_RubikCube_Source_RubikCube_RubikCubeGameModeBase_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesARubikCubeGameModeBase(); \
