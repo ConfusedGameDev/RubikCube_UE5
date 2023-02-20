@@ -18,11 +18,20 @@ public:
 	FVector OriginalPosition;
 	FVector CurrentPosition;
 
+	int CooordX, CoordY,CoordZ;
+
 	void SetPositionAndName(FVector Position);
 
 	void DestroyCublet();
 
 	void SetParent(AActor* newParent);
+
+	inline  void UpdateCoords(int x, int y, int z)
+	{
+		CooordX=x;
+		CoordY= y;
+		CoordZ= z;
+	}
 
 	ACublet();
 

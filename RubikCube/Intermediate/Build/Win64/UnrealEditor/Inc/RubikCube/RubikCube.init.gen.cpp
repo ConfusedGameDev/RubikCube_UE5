@@ -17,7 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeRubikCube_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xBBED5C9F,
+				0xB1B38575,
 				0xAA5BEFEB,
 				METADATA_PARAMS(nullptr, 0)
 			};
@@ -25,5 +25,5 @@ void EmptyLinkFunctionForGeneratedCodeRubikCube_init() {}
 		}
 		return Z_Registration_Info_UPackage__Script_RubikCube.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_RubikCube(Z_Construct_UPackage__Script_RubikCube, TEXT("/Script/RubikCube"), Z_Registration_Info_UPackage__Script_RubikCube, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xBBED5C9F, 0xAA5BEFEB));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_RubikCube(Z_Construct_UPackage__Script_RubikCube, TEXT("/Script/RubikCube"), Z_Registration_Info_UPackage__Script_RubikCube, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xB1B38575, 0xAA5BEFEB));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

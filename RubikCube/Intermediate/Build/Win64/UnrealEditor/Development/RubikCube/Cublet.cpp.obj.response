@@ -255,6 +255,9 @@ D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Source\RubikCube\0
 /I D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Inc\RubikCube
 /I D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Source
 /I D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Source\RubikCube\Public
+/I ..\Plugins\Experimental\EnhancedInput\Intermediate\Build\Win64\UnrealEditor\Inc\EnhancedInput
+/I ..\Plugins\Experimental\EnhancedInput\Source
+/I ..\Plugins\Experimental\EnhancedInput\Source\EnhancedInput\Public
 /I ThirdParty\mimalloc\include
 /I ThirdParty\LibTiff\Source\Win64
 /I ThirdParty\LibTiff\Source

@@ -1,18 +1,17 @@
 D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Inc\RubikCube\RubikCubeGameModeBase.gen.cpp
 /I .
-/I D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Inc\RubikCube
-/I D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Source
-/I Runtime
-/I Runtime\TraceLog\Public
-/I Runtime\Core\Public
-/I ..\Intermediate\Build\Win64\UnrealEditor\Inc\CoreUObject
-/I Runtime\CoreUObject\Public
+/I D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Source\RubikCube\Private
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\Engine
+/I Runtime
 /I ..\Shaders\Shared
 /I Runtime\Engine\Classes
 /I Runtime\Engine\Public
+/I Runtime\TraceLog\Public
+/I Runtime\Core\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\CoreOnline
 /I Runtime\CoreOnline\Public
+/I ..\Intermediate\Build\Win64\UnrealEditor\Inc\CoreUObject
+/I Runtime\CoreUObject\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\NetCore
 /I Runtime\Net
 /I Runtime\Net\Core\Classes
@@ -253,6 +252,9 @@ D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build
 /I Runtime\ClothingSystemRuntimeInterface\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\AnimationDataController
 /I Developer\AnimationDataController\Public
+/I D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Inc\RubikCube
+/I D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Source
+/I D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Source\RubikCube\Public
 /I ThirdParty\mimalloc\include
 /I ThirdParty\LibTiff\Source\Win64
 /I ThirdParty\LibTiff\Source

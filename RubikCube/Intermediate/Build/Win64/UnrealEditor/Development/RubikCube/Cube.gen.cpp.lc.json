@@ -7,6 +7,8 @@
         "Includes": [
             "d:\\jorgedata\\portafolio\\ue5\\rubikcube\\rubikcube_ue5\\rubikcube\\intermediate\\build\\win64\\unrealeditor\\development\\rubikcube\\definitions.rubikcube.h",
             "d:\\jorgedata\\portafolio\\ue5\\rubikcube\\rubikcube_ue5\\rubikcube\\source\\rubikcube\\public\\02_cube\\cube.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\plugins\\experimental\\enhancedinput\\source\\enhancedinput\\public\\inputactionvalue.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\plugins\\experimental\\enhancedinput\\intermediate\\build\\win64\\unrealeditor\\inc\\enhancedinput\\inputactionvalue.generated.h",
             "d:\\jorgedata\\portafolio\\ue5\\rubikcube\\rubikcube_ue5\\rubikcube\\intermediate\\build\\win64\\unrealeditor\\inc\\rubikcube\\cube.generated.h"
         ],
         "ImportedModules": [],
