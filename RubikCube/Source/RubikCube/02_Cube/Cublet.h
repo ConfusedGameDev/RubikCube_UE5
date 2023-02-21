@@ -17,7 +17,7 @@ public:
 
 	FVector OriginalPosition;
 	FVector CurrentPosition;
-
+	USceneComponent* OwningSlice;
 	int CooordX, CoordY,CoordZ;
 
 	void SetPositionAndName(FVector Position);
@@ -38,7 +38,6 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -46,4 +45,8 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	void SetupSlice(USceneComponent* NewOwningSlice);
+	 
+	 
+	
 };

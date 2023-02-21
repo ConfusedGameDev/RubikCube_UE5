@@ -25,15 +25,14 @@ ACube::ACube()
 	CameraComponent->SetupAttachment(SpringComponent);
 	SliceX0= CreateDefaultSubobject<USceneComponent>(TEXT("Slice X 0"));
 	SliceX0->SetupAttachment(GetRootComponent());
-	SliceX0->SetRelativeLocation(FVector(0.f,CubletSize,CubletSize));
+	
 
 	SliceX1= CreateDefaultSubobject<USceneComponent>(TEXT("Slice X 1"));
 	SliceX1->SetupAttachment(GetRootComponent());
-	SliceX0->SetRelativeLocation(FVector(CubletSize,CubletSize,CubletSize));
+	
 
 	SliceX2= CreateDefaultSubobject<USceneComponent>(TEXT("Slice X 2"));
 	SliceX2->SetupAttachment(GetRootComponent());
-	SliceX0->SetRelativeLocation(FVector(CubletSize*2,CubletSize,CubletSize));
 	
 	SliceY0= CreateDefaultSubobject<USceneComponent>(TEXT("Slice Y 0"));
 	SliceY0->SetupAttachment(GetRootComponent());
@@ -80,20 +79,19 @@ void ACube::CreateCube()
 			for (int z=0;z<Dimension;z++)
 			{				
 				auto newCublet=	GetWorld()->SpawnActor<ACublet>(CubletBase,FVector((x-1)*CubletSize,(y-1)*CubletSize,(z-1)*CubletSize),FRotator::ZeroRotator);
-				FAttachmentTransformRules Rules = FAttachmentTransformRules(EAttachmentRule::KeepWorld,true);				
 				Cublets.Add(newCublet);
 				newCublet->UpdateCoords(x,y,z);
 				InsertCubletAtIndex(x,y,z,newCublet);
 				switch (SliceCounter)
 				{
 				case 0:
-					newCublet->AttachToComponent(SliceX0, Rules);
+					newCublet->SetupSlice(SliceX0);
 					break;
 				case 1:
-					newCublet->AttachToComponent(SliceX1, Rules);
+					newCublet->SetupSlice(SliceX1);
 					break;
 				case 2:
-					newCublet->AttachToComponent(SliceX2, Rules);
+					newCublet->SetupSlice(SliceX2);
 					break;
 					default:
 						break;
@@ -145,6 +143,17 @@ void ACube::BeginPlay()
 	}
 	
 	CreateCube();
+}
+
+void ACube::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+	if(SliceX0 && SliceX1 && SliceX2)
+	{
+		SliceX0->SetRelativeLocation(FVector(-CubletSize,0,0));
+		SliceX1->SetRelativeLocation(FVector(0,0,0));
+		SliceX2->SetRelativeLocation(FVector(CubletSize,0,0));
+	}
 }
 
 // Called every frame
@@ -210,8 +219,9 @@ void ACube::OnCameraMove(const FInputActionValue& Value)
 		RotationDelta.X= GetValidAngle(RotationDelta.X);
 		 
 		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::Printf(TEXT("%f , %f, %f"), OriginalRotation.GetComponentForAxis(EAxis::X), OriginalRotation.GetComponentForAxis(EAxis::Y),OriginalRotation.GetComponentForAxis(EAxis::Z)));
-
-		SpringComponent->AddLocalRotation(FRotator(RotationDelta.Y,RotationDelta.X,0));
+		auto newRot=SpringComponent->GetRelativeRotation()+FRotator(RotationDelta.Y,RotationDelta.X,0);
+		newRot.Roll=0;
+		SpringComponent->SetRelativeRotation(newRot);
 	}
 }
 
@@ -229,12 +239,19 @@ void ACube::OnMouseClickEnd(const FInputActionValue& Value)
 		if(!CurrentCublet) return;
 		
 		PlayerController->GetMousePosition(MouseFinalPos.X,MouseFinalPos.Y);
-		CurrentCublet=nullptr;
-		if(FMath::Abs( MouseFinalPos.X-MouseInitialPos.X)>MouseSlideMinimum.X||FMath::Abs( MouseFinalPos.Y-MouseInitialPos.Y)>MouseSlideMinimum.Y)
+		float DeltaX= MouseFinalPos.X-MouseInitialPos.X;
+		float DeltaY= MouseFinalPos.Y-MouseInitialPos.Y;
+		if(FMath::Abs(DeltaX)>MouseSlideMinimum.X||FMath::Abs(DeltaY)>MouseSlideMinimum.Y)
 		{
-			GEngine->AddOnScreenDebugMessage(0,1.f,FColor(1,0,0),FString::Printf(TEXT("Should Slide")));
-			SliceX0->AddLocalRotation(FRotator(0,0,90));
+			GEngine->AddOnScreenDebugMessage(-1,1.f,FColor(1,0,0),FString::Printf(TEXT("Should Slide")));
+			if(CurrentCublet->OwningSlice)
+			{
+				if(FMath::Abs(DeltaX)>FMath::Abs(DeltaY))
+				CurrentCublet->OwningSlice->AddLocalRotation(FRotator(0,0, DeltaX>0?90:-90));
+				
+			}
 		}
+		CurrentCublet=nullptr;
 	}
 }
 

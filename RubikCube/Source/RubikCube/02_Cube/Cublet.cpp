@@ -27,6 +27,8 @@ void ACublet::BeginPlay()
 	
 }
 
+ 
+
 // Called every frame
 void ACublet::Tick(float DeltaTime)
 {
@@ -39,5 +41,13 @@ void ACublet::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+}
+
+void ACublet::SetupSlice(USceneComponent* NewOwningSlice)
+{
+	OwningSlice= NewOwningSlice;
+	const FAttachmentTransformRules Rules = FAttachmentTransformRules(EAttachmentRule::KeepWorld,true);				
+
+	AttachToComponent(OwningSlice,Rules);
 }
 
