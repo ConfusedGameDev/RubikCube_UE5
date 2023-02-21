@@ -30,24 +30,13 @@ public:
 	class UCameraComponent* CameraComponent;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	class USpringArmComponent* SpringComponent;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	class USceneComponent* SliceX0;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	class USceneComponent* SliceX1;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	class USceneComponent* SliceX2;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	class USceneComponent* SliceY0;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	class USceneComponent* SliceY1;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	class USceneComponent* SliceY2;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	class USceneComponent* SliceZ0;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	class USceneComponent* SliceZ1;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	class USceneComponent* SliceZ2;
+
+	UPROPERTY(VisibleAnywhere)
+	TArray<class USlice*> SlicesX;
+	UPROPERTY(VisibleAnywhere)
+	TArray<USlice*> SlicesY;
+	UPROPERTY(VisibleAnywhere)
+	TArray<USlice*> SlicesZ;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input)
 	class UInputMappingContext* CubeInputContext;
 
@@ -78,6 +67,8 @@ public:
 	float CameraZoom=250.f;
 	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="Camera")
 	float CameraZoomSpeed=25.f;
+
+	FVector lastHitNormal;
 	// Sets default values for this pawn's properties
 	ACube();
 	UFUNCTION(BlueprintCallable)

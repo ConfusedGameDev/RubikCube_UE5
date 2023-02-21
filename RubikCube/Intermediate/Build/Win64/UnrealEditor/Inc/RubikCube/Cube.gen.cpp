@@ -17,7 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeCube() {}
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
-	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
+	RUBIKCUBE_API UClass* Z_Construct_UClass_USlice_NoRegister();
 	ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputMappingContext_NoRegister();
 	ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputAction_NoRegister();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector2D();
@@ -146,42 +146,21 @@ void EmptyLinkFunctionForGeneratedCodeCube() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_SpringComponent_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_SpringComponent;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_SlicesX_Inner;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_SliceX0_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SlicesX_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_SliceX0;
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_SlicesX;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_SlicesY_Inner;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_SliceX1_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SlicesY_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_SliceX1;
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_SlicesY;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_SlicesZ_Inner;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_SliceX2_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SlicesZ_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_SliceX2;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_SliceY0_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_SliceY0;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_SliceY1_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_SliceY1;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_SliceY2_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_SliceY2;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_SliceZ0_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_SliceZ0;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_SliceZ1_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_SliceZ1;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_SliceZ2_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_SliceZ2;
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_SlicesZ;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_CubeInputContext_MetaData[];
 #endif
@@ -282,78 +261,33 @@ void EmptyLinkFunctionForGeneratedCodeCube() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACube_Statics::NewProp_SpringComponent = { "SpringComponent", nullptr, (EPropertyFlags)0x001000000009001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACube, SpringComponent), Z_Construct_UClass_USpringArmComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACube_Statics::NewProp_SpringComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACube_Statics::NewProp_SpringComponent_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACube_Statics::NewProp_SlicesX_Inner = { "SlicesX", nullptr, (EPropertyFlags)0x00000000000a0008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_USlice_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACube_Statics::NewProp_SliceX0_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACube_Statics::NewProp_SlicesX_MetaData[] = {
 		{ "Category", "Cube" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/02_Cube/Cube.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACube_Statics::NewProp_SliceX0 = { "SliceX0", nullptr, (EPropertyFlags)0x001000000009001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACube, SliceX0), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACube_Statics::NewProp_SliceX0_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACube_Statics::NewProp_SliceX0_MetaData)) };
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ACube_Statics::NewProp_SlicesX = { "SlicesX", nullptr, (EPropertyFlags)0x0010008000020009, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACube, SlicesX), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_ACube_Statics::NewProp_SlicesX_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACube_Statics::NewProp_SlicesX_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACube_Statics::NewProp_SlicesY_Inner = { "SlicesY", nullptr, (EPropertyFlags)0x00000000000a0008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_USlice_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACube_Statics::NewProp_SliceX1_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACube_Statics::NewProp_SlicesY_MetaData[] = {
 		{ "Category", "Cube" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/02_Cube/Cube.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACube_Statics::NewProp_SliceX1 = { "SliceX1", nullptr, (EPropertyFlags)0x001000000009001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACube, SliceX1), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACube_Statics::NewProp_SliceX1_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACube_Statics::NewProp_SliceX1_MetaData)) };
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ACube_Statics::NewProp_SlicesY = { "SlicesY", nullptr, (EPropertyFlags)0x0010008000020009, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACube, SlicesY), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_ACube_Statics::NewProp_SlicesY_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACube_Statics::NewProp_SlicesY_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACube_Statics::NewProp_SlicesZ_Inner = { "SlicesZ", nullptr, (EPropertyFlags)0x00000000000a0008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_USlice_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACube_Statics::NewProp_SliceX2_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACube_Statics::NewProp_SlicesZ_MetaData[] = {
 		{ "Category", "Cube" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/02_Cube/Cube.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACube_Statics::NewProp_SliceX2 = { "SliceX2", nullptr, (EPropertyFlags)0x001000000009001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACube, SliceX2), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACube_Statics::NewProp_SliceX2_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACube_Statics::NewProp_SliceX2_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACube_Statics::NewProp_SliceY0_MetaData[] = {
-		{ "Category", "Cube" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Public/02_Cube/Cube.h" },
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACube_Statics::NewProp_SliceY0 = { "SliceY0", nullptr, (EPropertyFlags)0x001000000009001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACube, SliceY0), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACube_Statics::NewProp_SliceY0_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACube_Statics::NewProp_SliceY0_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACube_Statics::NewProp_SliceY1_MetaData[] = {
-		{ "Category", "Cube" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Public/02_Cube/Cube.h" },
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACube_Statics::NewProp_SliceY1 = { "SliceY1", nullptr, (EPropertyFlags)0x001000000009001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACube, SliceY1), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACube_Statics::NewProp_SliceY1_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACube_Statics::NewProp_SliceY1_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACube_Statics::NewProp_SliceY2_MetaData[] = {
-		{ "Category", "Cube" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Public/02_Cube/Cube.h" },
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACube_Statics::NewProp_SliceY2 = { "SliceY2", nullptr, (EPropertyFlags)0x001000000009001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACube, SliceY2), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACube_Statics::NewProp_SliceY2_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACube_Statics::NewProp_SliceY2_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACube_Statics::NewProp_SliceZ0_MetaData[] = {
-		{ "Category", "Cube" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Public/02_Cube/Cube.h" },
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACube_Statics::NewProp_SliceZ0 = { "SliceZ0", nullptr, (EPropertyFlags)0x001000000009001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACube, SliceZ0), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACube_Statics::NewProp_SliceZ0_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACube_Statics::NewProp_SliceZ0_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACube_Statics::NewProp_SliceZ1_MetaData[] = {
-		{ "Category", "Cube" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Public/02_Cube/Cube.h" },
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACube_Statics::NewProp_SliceZ1 = { "SliceZ1", nullptr, (EPropertyFlags)0x001000000009001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACube, SliceZ1), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACube_Statics::NewProp_SliceZ1_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACube_Statics::NewProp_SliceZ1_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACube_Statics::NewProp_SliceZ2_MetaData[] = {
-		{ "Category", "Cube" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Public/02_Cube/Cube.h" },
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACube_Statics::NewProp_SliceZ2 = { "SliceZ2", nullptr, (EPropertyFlags)0x001000000009001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACube, SliceZ2), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACube_Statics::NewProp_SliceZ2_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACube_Statics::NewProp_SliceZ2_MetaData)) };
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ACube_Statics::NewProp_SlicesZ = { "SlicesZ", nullptr, (EPropertyFlags)0x0010008000020009, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACube, SlicesZ), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_ACube_Statics::NewProp_SlicesZ_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACube_Statics::NewProp_SlicesZ_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACube_Statics::NewProp_CubeInputContext_MetaData[] = {
 		{ "Category", "Input" },
@@ -439,15 +373,12 @@ void EmptyLinkFunctionForGeneratedCodeCube() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACube_Statics::NewProp_CubletSize,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACube_Statics::NewProp_CameraComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACube_Statics::NewProp_SpringComponent,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACube_Statics::NewProp_SliceX0,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACube_Statics::NewProp_SliceX1,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACube_Statics::NewProp_SliceX2,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACube_Statics::NewProp_SliceY0,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACube_Statics::NewProp_SliceY1,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACube_Statics::NewProp_SliceY2,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACube_Statics::NewProp_SliceZ0,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACube_Statics::NewProp_SliceZ1,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACube_Statics::NewProp_SliceZ2,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACube_Statics::NewProp_SlicesX_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACube_Statics::NewProp_SlicesX,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACube_Statics::NewProp_SlicesY_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACube_Statics::NewProp_SlicesY,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACube_Statics::NewProp_SlicesZ_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACube_Statics::NewProp_SlicesZ,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACube_Statics::NewProp_CubeInputContext,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACube_Statics::NewProp_ClickInputAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACube_Statics::NewProp_RotateCameraInputAction,
@@ -496,9 +427,9 @@ void EmptyLinkFunctionForGeneratedCodeCube() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_RubikCube_Source_RubikCube_Public_02_Cube_Cube_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ACube, ACube::StaticClass, TEXT("ACube"), &Z_Registration_Info_UClass_ACube, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACube), 2864949255U) },
+		{ Z_Construct_UClass_ACube, ACube::StaticClass, TEXT("ACube"), &Z_Registration_Info_UClass_ACube, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACube), 1743195478U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_RubikCube_Source_RubikCube_Public_02_Cube_Cube_h_3302850772(TEXT("/Script/RubikCube"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_RubikCube_Source_RubikCube_Public_02_Cube_Cube_h_1670922181(TEXT("/Script/RubikCube"),
 		Z_CompiledInDeferFile_FID_RubikCube_Source_RubikCube_Public_02_Cube_Cube_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_RubikCube_Source_RubikCube_Public_02_Cube_Cube_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

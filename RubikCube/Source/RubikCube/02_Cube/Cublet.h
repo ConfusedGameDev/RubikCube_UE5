@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "02_Cube/Slice.h"
 #include "Cublet.generated.h"
 
 UCLASS()
@@ -17,9 +18,9 @@ public:
 
 	FVector OriginalPosition;
 	FVector CurrentPosition;
-	USceneComponent* OwningSlice;
+	USceneComponent* OwningSliceX;
 	int CooordX, CoordY,CoordZ;
-
+	
 	void SetPositionAndName(FVector Position);
 
 	void DestroyCublet();
@@ -38,14 +39,15 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-	void SetupSlice(USceneComponent* NewOwningSlice);
+	void TryToRotate(float DeltaX, float DeltaY, FVector Normal);
+	void SetupSlice(USlice* NewOwningSlice);
 	 
 	 
 	

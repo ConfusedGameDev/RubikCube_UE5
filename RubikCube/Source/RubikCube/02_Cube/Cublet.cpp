@@ -43,11 +43,25 @@ void ACublet::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 }
 
-void ACublet::SetupSlice(USceneComponent* NewOwningSlice)
+void ACublet::TryToRotate(float DeltaX, float DeltaY, FVector Normal)
 {
-	OwningSlice= NewOwningSlice;
+	 
+	if( FMath::Abs(Normal.Z)>0.75f)
+		{
+			float Direction = Normal.Z>0? 1:-1;
+			if(FMath::Abs(DeltaX)>FMath::Abs(DeltaY) && OwningSliceX)
+			OwningSliceX->AddLocalRotation(FRotator(0,0, DeltaX>0?90*Direction:-90*Direction));
+		}
+	
+	 
+}
+
+void ACublet::SetupSlice(USlice* NewOwningSlice)
+{
+	OwningSliceX= NewOwningSlice;
+	
 	const FAttachmentTransformRules Rules = FAttachmentTransformRules(EAttachmentRule::KeepWorld,true);				
 
-	AttachToComponent(OwningSlice,Rules);
+	AttachToComponent(OwningSliceX,Rules);
 }
 

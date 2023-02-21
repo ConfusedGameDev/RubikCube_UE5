@@ -23,6 +23,15 @@
     <None Include="..\..\Config\DefaultGame.ini">
       <Filter>Config</Filter>
     </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Config\HoloLens">
+      <UniqueIdentifier>{4C8DD267-CDE7-336F-8602-F5F485D22BAB}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\HoloLens\HoloLensEngine.ini">
+      <Filter>Config\HoloLens</Filter>
+    </None>
     <Filter Include="Source\RubikCube">
       <UniqueIdentifier>{B399592A-9B78-398A-B727-4C7ABB023E19}</UniqueIdentifier>
     </Filter>
@@ -62,6 +71,9 @@
     <ClCompile Include="..\..\Source\RubikCube\Private\02_Cube\Cube.cpp">
       <Filter>Source\RubikCube\Private\02_Cube</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\RubikCube\Private\02_Cube\Slice.cpp">
+      <Filter>Source\RubikCube\Private\02_Cube</Filter>
+    </ClCompile>
     <Filter Include="Source\RubikCube\Public">
       <UniqueIdentifier>{FDD0702B-D73B-3BD9-BB17-CFE90255BF6D}</UniqueIdentifier>
     </Filter>
@@ -72,6 +84,9 @@
       <UniqueIdentifier>{1D13A4AD-13C8-35A7-AF10-552587DDAA69}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\RubikCube\Public\02_Cube\Cube.h">
+      <Filter>Source\RubikCube\Public\02_Cube</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\RubikCube\Public\02_Cube\Slice.h">
       <Filter>Source\RubikCube\Public\02_Cube</Filter>
     </ClInclude>
   </ItemGroup>

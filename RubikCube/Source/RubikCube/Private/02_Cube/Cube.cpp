@@ -7,10 +7,12 @@
 #include "Camera/CameraComponent.h"
 #include  "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "02_Cube/Slice.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "RubikCube/02_Cube/Cublet.h"
-
+//This is for Createing Runtime Objects
+#include "UObject/UObjectGlobals.h"
 // Sets default values
 ACube::ACube()
 {
@@ -23,31 +25,7 @@ ACube::ACube()
 	SpringComponent->bEnableCameraRotationLag=false;
 	CameraComponent= CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	CameraComponent->SetupAttachment(SpringComponent);
-	SliceX0= CreateDefaultSubobject<USceneComponent>(TEXT("Slice X 0"));
-	SliceX0->SetupAttachment(GetRootComponent());
-	
-
-	SliceX1= CreateDefaultSubobject<USceneComponent>(TEXT("Slice X 1"));
-	SliceX1->SetupAttachment(GetRootComponent());
-	
-
-	SliceX2= CreateDefaultSubobject<USceneComponent>(TEXT("Slice X 2"));
-	SliceX2->SetupAttachment(GetRootComponent());
-	
-	SliceY0= CreateDefaultSubobject<USceneComponent>(TEXT("Slice Y 0"));
-	SliceY0->SetupAttachment(GetRootComponent());
-
-	SliceY1= CreateDefaultSubobject<USceneComponent>(TEXT("Slice Y 1"));
-	SliceY1->SetupAttachment(GetRootComponent());
-	SliceY2= CreateDefaultSubobject<USceneComponent>(TEXT("Slice Y 2"));
-	SliceY2->SetupAttachment(GetRootComponent());
-
-	SliceZ0= CreateDefaultSubobject<USceneComponent>(TEXT("Slice Z 0"));
-	SliceZ0->SetupAttachment(GetRootComponent());
-	SliceZ1= CreateDefaultSubobject<USceneComponent>(TEXT("Slice Z 1"));
-	SliceZ1->SetupAttachment(GetRootComponent());
-	SliceZ2= CreateDefaultSubobject<USceneComponent>(TEXT("Slice Z 2"));
-	SliceZ2->SetupAttachment(GetRootComponent());
+	 
 	
 }
 
@@ -82,20 +60,9 @@ void ACube::CreateCube()
 				Cublets.Add(newCublet);
 				newCublet->UpdateCoords(x,y,z);
 				InsertCubletAtIndex(x,y,z,newCublet);
-				switch (SliceCounter)
-				{
-				case 0:
-					newCublet->SetupSlice(SliceX0);
-					break;
-				case 1:
-					newCublet->SetupSlice(SliceX1);
-					break;
-				case 2:
-					newCublet->SetupSlice(SliceX2);
-					break;
-					default:
-						break;
-				}
+				if(SlicesX.Num()>SliceCounter)
+				newCublet->SetupSlice(SlicesX[SliceCounter]);
+				 
 			}
 		}
 		SliceCounter++;
@@ -148,12 +115,29 @@ void ACube::BeginPlay()
 void ACube::PostInitializeComponents()
 {
 	Super::PostInitializeComponents();
-	if(SliceX0 && SliceX1 && SliceX2)
+	for (int i=0; i<Dimension; i++)
 	{
-		SliceX0->SetRelativeLocation(FVector(-CubletSize,0,0));
-		SliceX1->SetRelativeLocation(FVector(0,0,0));
-		SliceX2->SetRelativeLocation(FVector(CubletSize,0,0));
+		USlice* NewSliceX= NewObject<USlice>(this, FName(TEXT("SliceX_%i"),i),EObjectFlags::RF_Standalone);
+		NewSliceX->RegisterComponent();
+		
+		NewSliceX->SetupAttachment(GetRootComponent());
+		NewSliceX->SetRelativeLocation(FVector((i-(Dimension/2))*CubletSize,0,0));
+		SlicesX.Add(NewSliceX);
+
+		USlice* NewSliceY=   NewObject<USlice>(this, FName(TEXT("SliceY_%i"),i),EObjectFlags::RF_Standalone);
+		NewSliceY->RegisterComponent();
+		
+		NewSliceY->SetupAttachment(GetRootComponent());
+		NewSliceY->SetRelativeLocation(FVector(0,(i-(Dimension/2))*CubletSize,0));
+		SlicesY.Add(NewSliceY);
+		USlice* NewSliceZ=   NewObject<USlice>(this, FName(TEXT("SliceZ_%i"),i),EObjectFlags::RF_Standalone);
+		NewSliceZ->RegisterComponent();		
+		NewSliceZ->SetupAttachment(GetRootComponent());
+		NewSliceZ->SetRelativeLocation(FVector(0,0,(i-(Dimension/2))*CubletSize));
+		SlicesZ.Add(NewSliceY);
+		
 	}
+	 
 }
 
 // Called every frame
@@ -187,16 +171,19 @@ void ACube::OnMouseClickStart(const FInputActionValue& Value)
 		FHitResult Hit;
 		PlayerController->GetHitResultAtScreenPosition(MouseInitialPos,ECollisionChannel::ECC_Visibility,false,Hit);
 		CurrentCublet= Cast<ACublet>(Hit.GetActor());
+		//Normal Z1= Top Y1= side X1= Front
+		lastHitNormal= Hit.Normal;
 		if(!CurrentCublet)
 		{
 			return;
 		}
+ 		
 		auto CurrentCublet2= GetCubletAtIndex(CurrentCublet->CooordX,
 		                                      CurrentCublet->CoordY,
 		                                      CurrentCublet->CoordZ);
 		if(CurrentCublet2)
 		{
-			GEngine->AddOnScreenDebugMessage(0,1.f,FColor(1,0,0),FString::Printf(TEXT("Found Cube %s"),*CurrentCublet2->GetName()));
+			GEngine->AddOnScreenDebugMessage(-1,1.f,FColor(1,0,0),FString::Printf(TEXT("Found Cube %s with Normal %s"),*CurrentCublet2->GetName(), *Hit.Normal.ToString()));
 		}
 	}
 }
@@ -244,12 +231,8 @@ void ACube::OnMouseClickEnd(const FInputActionValue& Value)
 		if(FMath::Abs(DeltaX)>MouseSlideMinimum.X||FMath::Abs(DeltaY)>MouseSlideMinimum.Y)
 		{
 			GEngine->AddOnScreenDebugMessage(-1,1.f,FColor(1,0,0),FString::Printf(TEXT("Should Slide")));
-			if(CurrentCublet->OwningSlice)
-			{
-				if(FMath::Abs(DeltaX)>FMath::Abs(DeltaY))
-				CurrentCublet->OwningSlice->AddLocalRotation(FRotator(0,0, DeltaX>0?90:-90));
-				
-			}
+			CurrentCublet->TryToRotate(DeltaX,DeltaY,lastHitNormal);
+			
 		}
 		CurrentCublet=nullptr;
 	}
