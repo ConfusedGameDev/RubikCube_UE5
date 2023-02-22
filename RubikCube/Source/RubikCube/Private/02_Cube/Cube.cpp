@@ -50,6 +50,7 @@ void ACube::CreateCube()
 	}
 	
 	int SliceCounter=0;
+	int CubeID=0;
 	for (int x=0;x<Dimension;x++)
 	{
 		for (int y=0;y<Dimension;y++)
@@ -58,11 +59,44 @@ void ACube::CreateCube()
 			{				
 				auto newCublet=	GetWorld()->SpawnActor<ACublet>(CubletBase,FVector((x-1)*CubletSize,(y-1)*CubletSize,(z-1)*CubletSize),FRotator::ZeroRotator);
 				Cublets.Add(newCublet);
-				newCublet->UpdateCoords(x,y,z);
+				newCublet->UpdateCoords(x,y,z,CubeID);
 				InsertCubletAtIndex(x,y,z,newCublet);
 				if(SlicesX.Num()>SliceCounter)
-				newCublet->SetupSlice(SlicesX[SliceCounter]);
+				newCublet->SetupSlice(SlicesX[SliceCounter],ESliceType::ESliceTypeX);
+				CubeID++;
 				 
+			}
+		}
+		SliceCounter++;
+	}
+	SliceCounter=0;
+	for (int y=0;y<Dimension;y++)
+	{
+		for (int z=0;z<Dimension;z++)
+		{
+			for(int x=0;x<Dimension;x++)
+			{
+				auto const cublet= GetCubletAtIndex(x,y,z);
+				if(cublet && SliceCounter<Dimension)
+				{
+					cublet->SetupSlice(SlicesY[SliceCounter],ESliceType::ESliceTypeY);
+				}
+			}
+		}
+		SliceCounter++;
+	}
+	SliceCounter=0;
+	for (int z=0;z<Dimension;z++)
+	{
+		for  (int y=0;y<Dimension;y++)
+		{
+			for(int x=0;x<Dimension;x++)
+			{
+				auto const cublet= GetCubletAtIndex(x,y,z);
+				if(cublet && SliceCounter<Dimension)
+				{
+					cublet->SetupSlice(SlicesZ[SliceCounter],ESliceType::ESliceTypeZ);
+				}
 			}
 		}
 		SliceCounter++;
@@ -71,12 +105,11 @@ void ACube::CreateCube()
 
 ACublet* ACube::GetCubletAtIndex(int x, int y, int z)
 {
-	 
-		auto CUblet=(Cublets3D+x*Dimension*Dimension+y*Dimension+z); 
-		
-		auto CUblet2=Cublets3D2[x][y][z];
-		return CUblet2;  
-	 
+		//auto CUblet=(Cublets3D+x*Dimension*Dimension+y*Dimension+z);
+		//
+		if(x<0 || x>Dimension ||y<0 || y>Dimension ||z<0 || z>Dimension )
+			return  nullptr;
+		return Cublets3D2[x][y][z];	 
 }
 
 void ACube::InsertCubletAtIndex(int x, int y, int z, ACublet* newCublet)
@@ -117,24 +150,31 @@ void ACube::PostInitializeComponents()
 	Super::PostInitializeComponents();
 	for (int i=0; i<Dimension; i++)
 	{
-		USlice* NewSliceX= NewObject<USlice>(this, FName(TEXT("SliceX_%i"),i),EObjectFlags::RF_Standalone);
-		NewSliceX->RegisterComponent();
-		
-		NewSliceX->SetupAttachment(GetRootComponent());
-		NewSliceX->SetRelativeLocation(FVector((i-(Dimension/2))*CubletSize,0,0));
+		/*
+		 *It wont show up in the outliner
+		 * Often a Blueprint has had components added to it via a Construction Script and, by default,
+		 * you can't view those in the Details View. In Editor Preferences you can uncheck "Hide Construction Script
+		 * Components in Details View" to see everything on an actor
+		 */
+		USlice* NewSliceX= Cast<USlice>( AddComponentByClass(USlice::StaticClass(),true,
+											FTransform(FVector((i-(Dimension/2))*CubletSize,0,0)),false));
+			NewObject<USlice>(this, FName(TEXT("SliceX_%i"),i));
+		NewSliceX->Rename(*FString::Printf(TEXT("SliceX_%i"),i));
 		SlicesX.Add(NewSliceX);
 
-		USlice* NewSliceY=   NewObject<USlice>(this, FName(TEXT("SliceY_%i"),i),EObjectFlags::RF_Standalone);
-		NewSliceY->RegisterComponent();
-		
-		NewSliceY->SetupAttachment(GetRootComponent());
-		NewSliceY->SetRelativeLocation(FVector(0,(i-(Dimension/2))*CubletSize,0));
+		USlice* NewSliceY= Cast<USlice>( AddComponentByClass(USlice::StaticClass(),true,
+											FTransform(FVector(0,(i-(Dimension/2))*CubletSize,0)),false));
+		NewObject<USlice>(this, FName(TEXT("SliceY_%i"),i));
+		NewSliceY->Rename(*FString::Printf(TEXT("SliceY_%i"),i));
 		SlicesY.Add(NewSliceY);
-		USlice* NewSliceZ=   NewObject<USlice>(this, FName(TEXT("SliceZ_%i"),i),EObjectFlags::RF_Standalone);
-		NewSliceZ->RegisterComponent();		
-		NewSliceZ->SetupAttachment(GetRootComponent());
-		NewSliceZ->SetRelativeLocation(FVector(0,0,(i-(Dimension/2))*CubletSize));
-		SlicesZ.Add(NewSliceY);
+
+		USlice* NewSliceZ= Cast<USlice>( AddComponentByClass(USlice::StaticClass(),true,
+											FTransform(FVector((0,0,i-(Dimension/2))*CubletSize)),false));
+		NewObject<USlice>(this, FName(TEXT("SliceZ_%i"),i));
+		NewSliceZ->Rename(*FString::Printf(TEXT("SliceZ_%i"),i));
+		SlicesZ.Add(NewSliceZ);
+
+		 
 		
 	}
 	 

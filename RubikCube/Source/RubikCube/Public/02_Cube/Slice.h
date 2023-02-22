@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "Slice.generated.h"
+ #include "Slice.generated.h"
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -20,15 +20,25 @@ public:
 	bool isRotating;
 	void RotateStart(FRotator Direction);
 	void OnRotationEnd();
-	void OnRotate();
+	void OnRotate(float Delta);
+	TArray<class ACublet*> Cublets;
+
+	void TryRotate(FRotator Direction);
+	void AddCublet(class ACublet* cubletToAdd);
+	
 
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
-
+private:
+	bool bIsRotating;
+	FRotator InitialRotation,FinalRotation;
+	float RotationDelta=0;
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 		
 };
+
+

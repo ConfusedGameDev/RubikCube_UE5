@@ -7,6 +7,7 @@
 /IGNORE:4221
 /NODEFAULTLIB
 "D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\RubikCubeEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Development\RubikCube\Slice.cpp.obj"
 "D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Development\RubikCube\GSRubikCube.cpp.obj"
 "D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Development\RubikCube\RubikCube.cpp.obj"
 "D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Development\RubikCube\RubikCubeGameModeBase.cpp.obj"
@@ -17,5 +18,6 @@
 "D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Development\RubikCube\GSRubikCube.gen.cpp.obj"
 "D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Development\RubikCube\RubikCube.init.gen.cpp.obj"
 "D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Development\RubikCube\RubikCubeGameModeBase.gen.cpp.obj"
+"D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Development\RubikCube\Slice.gen.cpp.obj"
 "D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Development\RubikCube\Default.rc2.res"
 /OUT:"D:\JORGEDATA\portafolio\ue5\RubikCube\RubikCube_UE5\RubikCube\Intermediate\Build\Win64\UnrealEditor\Development\RubikCube\UnrealEditor-RubikCube.lib"

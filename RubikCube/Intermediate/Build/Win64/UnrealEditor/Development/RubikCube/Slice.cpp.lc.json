@@ -7,7 +7,13 @@
         "Includes": [
             "d:\\jorgedata\\portafolio\\ue5\\rubikcube\\rubikcube_ue5\\rubikcube\\intermediate\\build\\win64\\unrealeditor\\development\\rubikcube\\definitions.rubikcube.h",
             "d:\\jorgedata\\portafolio\\ue5\\rubikcube\\rubikcube_ue5\\rubikcube\\source\\rubikcube\\public\\02_cube\\slice.h",
-            "d:\\jorgedata\\portafolio\\ue5\\rubikcube\\rubikcube_ue5\\rubikcube\\intermediate\\build\\win64\\unrealeditor\\inc\\rubikcube\\slice.generated.h"
+            "d:\\jorgedata\\portafolio\\ue5\\rubikcube\\rubikcube_ue5\\rubikcube\\intermediate\\build\\win64\\unrealeditor\\inc\\rubikcube\\slice.generated.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\kismet\\kismetmathlibrary.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\kismetmathlibrary.generated.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\kismet\\kismetmathlibrary.inl",
+            "d:\\jorgedata\\portafolio\\ue5\\rubikcube\\rubikcube_ue5\\rubikcube\\source\\rubikcube\\02_cube\\cublet.h",
+            "d:\\jorgedata\\portafolio\\ue5\\rubikcube\\rubikcube_ue5\\rubikcube\\source\\rubikcube\\rubikcubeenums.h",
+            "d:\\jorgedata\\portafolio\\ue5\\rubikcube\\rubikcube_ue5\\rubikcube\\intermediate\\build\\win64\\unrealeditor\\inc\\rubikcube\\cublet.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

@@ -3,6 +3,7 @@
 
 #include "Cublet.h"
 
+#include "02_Cube/Slice.h"
 
 
 void ACublet::DestroyCublet()
@@ -45,23 +46,65 @@ void ACublet::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void ACublet::TryToRotate(float DeltaX, float DeltaY, FVector Normal)
 {
-	 
+	
+	 //Rotate X Slice
 	if( FMath::Abs(Normal.Z)>0.75f)
 		{
 			float Direction = Normal.Z>0? 1:-1;
 			if(FMath::Abs(DeltaX)>FMath::Abs(DeltaY) && OwningSliceX)
-			OwningSliceX->AddLocalRotation(FRotator(0,0, DeltaX>0?90*Direction:-90*Direction));
+			{
+				
+				OwningSliceX->TryRotate(FRotator(0,0, DeltaX>0?90*Direction:-90*Direction));
+			}
 		}
+	//Rotate Y Slice
+	else if( FMath::Abs(Normal.Y)>0.75f)
+	{
+		float Direction = Normal.Y>0? 1:-1;
+		if(FMath::Abs(DeltaX)<FMath::Abs(DeltaY) && OwningSliceY)
+		{
+		 
+			OwningSliceY->TryRotate (FRotator(0,0, DeltaX>0?90*Direction:-90*Direction));
+		}
+	}
+	//Rotate Z Slice
+	else if( FMath::Abs(Normal.X)>0.75f)
+	{
+		float Direction = Normal.X>0? 1:-1;
+		if(FMath::Abs(DeltaX)>FMath::Abs(DeltaY) && OwningSliceZ)
+		{
+			 
+			OwningSliceZ->TryRotate(FRotator(0,DeltaX>0?90*Direction:-90*Direction, 0));
+		}
+		else if(OwningSliceY)
+		{
+		 
+			OwningSliceY->TryRotate (FRotator(DeltaY>0?-90*Direction:90*Direction,0, 0));
+		}
+	}
 	
 	 
 }
 
-void ACublet::SetupSlice(USlice* NewOwningSlice)
+void ACublet::SetupSlice(USlice* NewOwningSlice, ESliceType SliceType)
 {
-	OwningSliceX= NewOwningSlice;
+	NewOwningSlice->AddCublet(this);			
+	switch (SliceType)
+	{
+		case ESliceType::ESliceTypeX:
+			OwningSliceX= NewOwningSlice;
+			
+			break;
+		case ESliceType::ESliceTypeY:
+			OwningSliceY= NewOwningSlice;
+			 
+			break;
+		case ESliceType::ESliceTypeZ:
+			OwningSliceZ= NewOwningSlice;
+			 
+			break;
+		default: ;
+	}
 	
-	const FAttachmentTransformRules Rules = FAttachmentTransformRules(EAttachmentRule::KeepWorld,true);				
-
-	AttachToComponent(OwningSliceX,Rules);
 }
 
